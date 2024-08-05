@@ -1,1 +1,59 @@
 syntax = "proto3";
+
+package simulation;
+
+option go_package = "github.com/Hanyue-s-FYP/MarCom-Proto";
+
+service SimulationService {
+    rpc StartSimulation (SimulationRequest) returns (SimulationResponse);
+    rpc PauseSimulation (PauseRequest) returns (PauseResponse);
+    rpc StreamUpdates (StreamRequest) returns (stream SimulationUpdate);
+}
+
+message AgentAttribute {
+    string key = 1;
+    string value = 2;
+}
+
+message Agent {
+    int32 id = 1;
+    string name = 2;
+    string desc = 3;
+    repeated AgentAttribute attrs = 4;
+}
+
+message Product {
+    int32 id = 1;
+    string name = 2;
+    string desc = 3;
+    float price = 4;
+    float cost = 5;
+}
+
+message SimulationRequest {
+    int32 id = 1;
+    string env_desc = 2;
+    repeated Agent agents = 3;
+    repeated Product products = 4;
+}
+
+message SimulationResponse {
+    string message = 1;
+}
+
+message PauseRequest {
+    string simulation_id = 1;
+}
+
+message PauseResponse {
+    string message = 1;
+}
+
+message StreamRequest {
+    string simulation_id = 1;
+}
+
+message SimulationUpdate {
+    string agent_id = 1;
+    repeated string actions = 2;
+}
