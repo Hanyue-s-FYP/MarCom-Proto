@@ -1,6 +1,5 @@
 GENERATE_PKG_NAME=proto_simulation
 GENERATE_DIR=../$(GENERATE_PKG_NAME)
-GOIMPORT=github.com/Hanyue-s-FYP/Marcom-Backend/$(GENERATE_PKG_NAME)
 export
 
 compile_simulation_python:
