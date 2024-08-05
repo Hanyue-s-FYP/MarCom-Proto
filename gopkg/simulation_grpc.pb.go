@@ -4,7 +4,7 @@
 // - protoc             v5.27.3
 // source: simulation.proto
 
-package go
+package gopkg
 
 import (
 	context "context"
