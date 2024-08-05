@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package simulation;
 
-option go_package = "github.com/Hanyue-s-FYP/MarCom-Proto";
+option go_package = "github.com/Hanyue-s-FYP/MarCom-Proto/go";
 
 service SimulationService {
     rpc StartSimulation (SimulationRequest) returns (SimulationResponse);
