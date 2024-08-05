@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package simulation;
 
+option go_package = "./proto_simulation";
+
 service SimulationService {
     rpc StartSimulation (SimulationRequest) returns (SimulationResponse);
     rpc PauseSimulation (PauseRequest) returns (PauseResponse);
