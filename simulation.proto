@@ -55,5 +55,6 @@ message StreamRequest {
 
 message SimulationUpdate {
     string agent_id = 1;
-    repeated string actions = 2;
+    string action = 2;
+    string content = 3; // see db.py in MarCom-SimulationCore line 35
 }
