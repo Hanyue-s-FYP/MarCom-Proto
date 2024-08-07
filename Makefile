@@ -4,7 +4,7 @@ export
 
 compile_simulation_python:
 	mkdir -p $(GENERATE_DIR)
-	python -m grpc_tools.protoc -I. --python_out=$(GENERATE_DIR)  --grpc_python_out=$(GENERATE_DIR) ./simulation.proto
+	python -m grpc_tools.protoc -I$(GENERATE_PKG_NAME)=. --python_out=..  --grpc_python_out=.. ./simulation.proto
 
 compile_simulation_go:
 	mkdir -p $(GENERATE_DIR)

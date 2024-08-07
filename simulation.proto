@@ -42,7 +42,7 @@ message SimulationResponse {
 }
 
 message PauseRequest {
-    string simulation_id = 1;
+    int32 simulation_id = 1;
 }
 
 message PauseResponse {
@@ -50,7 +50,7 @@ message PauseResponse {
 }
 
 message StreamRequest {
-    string simulation_id = 1;
+    int32 simulation_id = 1;
 }
 
 message SimulationUpdate {
@@ -58,4 +58,5 @@ message SimulationUpdate {
     string action = 2;
     string content = 3; // see db.py in MarCom-SimulationCore line 35
     int32 cycle = 4; // which cycle is that (if is new cycle then need insert)
+    int32 simulation_id = 5; // to associate the cycle with the simulation
 }
