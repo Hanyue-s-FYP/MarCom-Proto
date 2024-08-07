@@ -35,6 +35,7 @@ message SimulationRequest {
     string env_desc = 2;
     repeated Agent agents = 3;
     repeated Product products = 4;
+    int32 total_cycles = 5;
 }
 
 message SimulationResponse {
