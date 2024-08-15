@@ -2,12 +2,13 @@ syntax = "proto3";
 
 package simulation;
 
-option go_package = "./proto_simulation";
+option go_package = "./proto";
 
-service SimulationService {
+service MarcomService {
     rpc StartSimulation (SimulationRequest) returns (SimulationResponse);
     rpc PauseSimulation (PauseRequest) returns (PauseResponse);
-    rpc StreamUpdates (StreamRequest) returns (stream SimulationUpdate);
+    rpc StreamSimulationUpdates (StreamRequest) returns (stream SimulationUpdate);
+    rpc ResearchProductCompetitor (Product) returns (ProductCompetitorResponse);
 }
 
 message AgentAttribute {
@@ -28,6 +29,11 @@ message Product {
     string desc = 3;
     float price = 4;
     float cost = 5;
+}
+
+message ProductCompetitorResponse {
+    string query = 1;
+    string report = 2;
 }
 
 message SimulationRequest {
